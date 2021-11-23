@@ -1,8 +1,4 @@
 <p align="center">
-  <a href="https://github.com/ervbrian/NetDeploy">
-    <img src="images/logo.jpeg" alt="Logo" width="320" height="320">
-  </a>
-
   <h3 align="center">NetDeploy</h3>
 
   <p align="center">
@@ -71,7 +67,7 @@ NetDeploy allows network engineers to focus on the deployment steps and validati
    ```
 2. Create Virtual Environment
    ```sh
-   cd NetDeploy
+   $ cd NetDeploy
    $ python3 -m venv .venv
    ```
 3. Activate Virtual Environment
