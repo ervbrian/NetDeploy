@@ -1,0 +1,33 @@
+---
+  deployment: 
+    steps:
+      step_01: 
+          type: validation
+          name: "Verify OSPF is not configured"
+          devices: ["18.236.182.196"]
+          command: "show ip proto | count ospf"
+          expected_output: "Number of lines which match regexp = 0"
+          exact_match: True
+          retry: 1
+      step_02:
+          type: configuration
+          name: "Push OSPF configs"
+          devices: ["18.236.182.196"]
+          config: "examples/ospf_config.txt"
+          rollback_config: "examples/ospf_config_rollback.txt"
+      step_03:
+          type: validation
+          name: "Verify OSPF is configured"
+          devices: ["18.236.182.196"]
+          command: "show ip proto | count ospf"
+          expected_output: "Number of lines which match regexp = 1"
+          exact_match: True
+          retry: 1
+      step_04:
+          type: validation
+          name: "Verify all loopbacks are OSPF enabled"
+          devices: ["18.236.182.196"]
+          command: "show ip ospf int | count ^Loopback"
+          expected_output: "Number of lines which match regexp = 11"
+          exact_match: True
+          retry: 1
