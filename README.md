@@ -44,7 +44,7 @@
 Network deployments typically consist of a series of validation and configuration steps across one or more devices. Manually typing configurations can lead to unintended errors or typos. Additionally, interpreting large amounts of "show command" output under pressure can lead to misinterpretation of environment health and/or state. 
 
 ### Solution
-NetDeploy allows network engineers to focus on the deployment steps and validation up-front, reducing the amount of information that needs to be interpreted during deployments. NetDeploy parses deployment steps specified in an input YAML, ensures the checks pass, pushes configuration changes and automatically rolls when validation steps fail. 
+NetDeploy allows network engineers to focus on the deployment steps and validation up-front, reducing the amount of information that needs to be interpreted during deployments. NetDeploy parses deployment steps specified in an input YAML, ensures the checks pass, pushes configuration changes and automatically rolls back when validation steps fail. 
 
 ### Built With
 
